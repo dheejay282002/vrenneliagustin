@@ -1,74 +1,595 @@
-%PDF-1.4
-%“Œ‹ž ReportLab Generated PDF document (opensource)
-1 0 obj
-<<
-/F1 2 0 R /F2 3 0 R
->>
-endobj
-2 0 obj
-<<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
->>
-endobj
+%PDF-1.3
+%ºß¬à
 3 0 obj
-<<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 4 0 R
 >>
 endobj
 4 0 obj
 <<
-/Contents 8 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 7 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
+/Length 6329
+>>
+stream
+0.200025 w
+0 G
+BT
+/F2 19 Tf
+21.8499999999999979 TL
+0.039 g
+200.7399999999999807 738. Td
+(VRENELLI M. AGUSTIN) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.235 g
+191.1599999999999682 723. Td
+(BS Information Technology Student  |  Network & Security) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.235 g
+139.0949999999999704 710. Td
+(vrenelli.agustin.3004@gmail.com  |  0991 892 2775  |  Cauayan, Isabela, Philippines) Tj
+ET
+0.6 w
+0.35 G
+48. 704. m
+564. 704. l
+S
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.067 g
+48. 690. Td
+(PROFESSIONAL SUMMARY) Tj
+ET
+0.6 w
+0.24 G
+48. 687. m
+564. 687. l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 679. Td
+(Bachelor of Science in Information Technology student at Isabela State University - Cauayan Campus, specializing in) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 665.6000000000000227 Td
+(network and information security. Holds five completed cybersecurity and networking credentials from Cisco) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 652.2000000000000455 Td
+(Networking Academy and OpenLearn. Builds practical web, database, and LAN skills through academic and) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 638.7999999999999545 Td
+(self-directed projects. Seeking an internship or entry-level role in network administration, IT support, or cybersecurity.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.067 g
+48. 621.3999999999999773 Td
+(EDUCATION) Tj
+ET
+0.6 w
+0.24 G
+48. 618.3999999999999773 m
+564. 618.3999999999999773 l
+S
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.067 g
+48. 610.3999999999999773 Td
+(Bachelor of Science in Information Technology) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.275 g
+502.1549999999999727 610.3999999999999773 Td
+(2023 - Present) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.137 g
+48. 597.3999999999999773 Td
+(Isabela State University - Cauayan Campus, Isabela, Philippines. Coursework includes computer networking, web) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.137 g
+48. 584.6699999999999591 Td
+(development, database management systems, and information security fundamentals.) Tj
+ET
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.067 g
+48. 566.9400000000000546 Td
+(Senior High School Graduate) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.275 g
+513.7450000000000045 566.9400000000000546 Td
+(2017 - 2023) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.137 g
+48. 553.9400000000000546 Td
+(Naguilian National High School, Naguilian, Isabela, Philippines.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.067 g
+48. 537.2100000000000364 Td
+(TECHNICAL SKILLS) Tj
+ET
+0.6 w
+0.24 G
+48. 534.2100000000000364 m
+564. 534.2100000000000364 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 526.2100000000000364 Td
+(Programming and Web: HTML5, CSS3, JavaScript, responsive web design) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+58. 512.8100000000000591 Td
+(Databases: MySQL, relational database design and querying) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+58. 499.4100000000000819 Td
+(Networking: LAN configuration, TCP/IP fundamentals, network troubleshooting) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+58. 486.0100000000001046 Td
+(Security: Cybersecurity fundamentals, threat management, security awareness) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+58. 472.6100000000001273 Td
+(Tools and Platforms: Windows and Linux environments, office productivity suites) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.067 g
+48. 455.2100000000001501 Td
+(CERTIFICATIONS) Tj
+ET
+0.6 w
+0.24 G
+48. 452.2100000000001501 m
+564. 452.2100000000001501 l
+S
+BT
+/F2 10 Tf
+11.5 TL
+0.067 g
+48. 444.2100000000001501 Td
+(Information Technology Specialist: Networking) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.275 g
+490.4700000000000273 444.2100000000001501 Td
+(December 8, 2025) Tj
+ET
+BT
+/F3 9 Tf
+10.3499999999999996 TL
+0.137 g
+58. 432.7100000000001501 Td
+(Certiport / Networking Academy) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+0.067 g
+48. 418.6500000000001478 Td
+(Cyber Threat Management) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.275 g
+494.9700000000000273 418.6500000000001478 Td
+(January 28, 2026) Tj
+ET
+BT
+/F3 9 Tf
+10.3499999999999996 TL
+0.137 g
+58. 407.1500000000001478 Td
+(Cisco Networking Academy) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+0.067 g
+48. 393.0900000000001455 Td
+(Introduction to Cybersecurity) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.275 g
+494.9700000000000273 393.0900000000001455 Td
+(January 17, 2026) Tj
+ET
+BT
+/F3 9 Tf
+10.3499999999999996 TL
+0.137 g
+58. 381.5900000000001455 Td
+(Cisco Networking Academy) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+0.067 g
+48. 367.5300000000001432 Td
+(Introduction to Cyber Security: Stay Safe Online) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.275 g
+509.8199999999999932 367.5300000000001432 Td
+(May 20, 2025) Tj
+ET
+BT
+/F3 9 Tf
+10.3499999999999996 TL
+0.137 g
+58. 356.0300000000001432 Td
+(OpenLearn - The Open University) Tj
+ET
+BT
+/F2 10 Tf
+11.5 TL
+0.067 g
+48. 341.970000000000141 Td
+(Gamified Intelligent Cyber Aptitude and Skills Training \(GICAST\)) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.275 g
+509.8199999999999932 341.970000000000141 Td
+(May 19, 2025) Tj
+ET
+BT
+/F3 9 Tf
+10.3499999999999996 TL
+0.137 g
+58. 330.470000000000141 Td
+(OpenLearn - The Open University) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.067 g
+48. 312.4100000000001387 Td
+(PROJECTS) Tj
+ET
+0.6 w
+0.24 G
+48. 309.4100000000001387 m
+564. 309.4100000000001387 l
+S
+BT
+/F2 10.5 Tf
+12.0749999999999993 TL
+0.067 g
+48. 301.4100000000001387 Td
+(Secure LAN-Based Campus Cashier System) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 289.4100000000001387 Td
+(Proposed LAN-based cashier collection and audit-ready reporting system for Isabela State University - Cauayan) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 276.0100000000001046 Td
+(Campus. Designed to streamline rentals and merchandise collections with role-based access, transaction records,) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 262.6100000000001273 Td
+(and report generation. Responsible for requirements analysis, network design, and front-end development.) Tj
+ET
+BT
+/F2 11 Tf
+12.6499999999999986 TL
+0.067 g
+48. 245.2100000000001501 Td
+(ADDITIONAL SKILLS) Tj
+ET
+0.6 w
+0.24 G
+48. 242.2100000000001501 m
+564. 242.2100000000001501 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0.137 g
+48. 234.2100000000001501 Td
+(Communication, Leadership, Teamwork, Problem Solving, Critical Thinking) Tj
+ET
+0.6 w
+0.59 G
+48. 210.8100000000001728 m
+564. 210.8100000000001728 l
+S
+BT
+/F3 8 Tf
+9.1999999999999993 TL
+0.431 g
+48. 200.8100000000001728 Td
+(References available upon request.) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R ]
+/Count 1
 >>
 endobj
 5 0 obj
 <<
-/PageMode /UseNone /Pages 7 0 R /Type /Catalog
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
 >>
 endobj
 6 0 obj
 <<
-/Author (\(anonymous\)) /CreationDate (D:20261005033347+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261005033347+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
 >>
 endobj
 7 0 obj
 <<
-/Count 1 /Kids [ 4 0 R ] /Type /Pages
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
 >>
 endobj
 8 0 obj
 <<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 1232
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
 >>
-stream
-Gatm:bAu>s&A7ljk%JZn%)I]ejqLsl@sR`<9I(um?j`($"p$=uEj<b/^B7A3keq'QXc$2R-iuQ!m[5+.Yjip^B9E=$:j@I]J2feq5Wm3l3e`B]r-LbR/%kq;6cTOc0Ye_(_QlOuKEJG@r3QR1>^m:n>fbMELdhjT>bENt45_sRNc1Rd^ZSjA.0[pH(p0j5'^?+j5=#6(@DCgp1pl^p6Ta/Op-Z'Sh%<nIpk/(fd$EPn-P2`MR$ubt^PF6Oij)a.<VD/i]seE^h'HpC2Ijq<D=?LGAO9RW:>lfO0I/sJ35_HIHS/rM37lK[m&im&oAW21#\isL:A<j^EB0FVI;oKZqZoC,i'eYgZJe^ETN;[PJuaQW:bY`sSYrP'=oma,7VSjR2&*0#YiK$DPR4aPH_hf0?`lCC[=g)D8LY9!Tstn:('a)Uha+fn&A1![kBFLJ-+dXjrWJ+F%m%Hq`:F1(F:M.:Url,/A"DbPR?ItXnsgNX#FN!tRQ^1i>q^cci(/"1URN[CJ]5TN1o?K*rA'LFb4]D7W.m\j/D*QrKrk"M[(J;E\*WDq0+-e,M#^g6%mne/OKfe5W[,b"&_I!.^n;]Ig=+pd_m0\P5AXF.U&`;<Y4rW%h3G],8tHgCEYM3]6WCT!Cj<+k,1e<`)Cg&5njE:FQ(h(3`ZmNIb^8=ITEG4q"tf?LI](--,/WT?@!>j21c/6Rpnkuqk64`fmpO?h<\oI(1olMr:`Xg#K)_nW+2P3&(QlI?#Q2S)rJkUlr5p1$9#2Jf<Ch\/cC6%g*F+Ho"r#^(/YC9,qc0[CbA2p"<RN4/Z6M`\c6V)0RMQHpX:Q;0YND&=BF=:ePNaplNA:q!Er91ig%>5&N\Sdo[UjHAMlajP=WN!_idH:>^tqHShZ"EH;&j(i]InQ_J'73!3__-b<]d.US1V!A2Bp$Db$!FXq'-Z`^6:[5=Ndg$UIQ/rs"r:n2a[J/*^Ym0pumH-0!R6HeB<d9fe<#Ymm$1[ngaN5AZi9A>)1Z_Y4$Ua(hXqLXjdog'o.L+6?-h&7E3m-R.!%U_OJTKn(aM[E/S4uRm-C]c^J[=VYeS8YnCa'(tAHs>+9fo"rq3N0E]$0VX=/O3>9PkE-qF!M2CKafk[@HnCQl@+M,Co:r8/?[cV0=(nVL2U,reaUBIVB2.5$0<Q6>TTE-$S!M?3+5I"N"98:d/53on%`Y61akkt$c\bX/WSsn/\-TV4*+#s',4Wl.+~>endstream
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+/F4 8 0 R
+/F5 9 0 R
+/F6 10 0 R
+/F7 11 0 R
+/F8 12 0 R
+/F9 13 0 R
+/F10 14 0 R
+/F11 15 0 R
+/F12 16 0 R
+/F13 17 0 R
+/F14 18 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+19 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20261010141014+08'00')
+>>
+endobj
+20 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
 endobj
 xref
-0 9
+0 21
 0000000000 65535 f 
-0000000061 00000 n 
-0000000102 00000 n 
-0000000209 00000 n 
-0000000321 00000 n 
-0000000524 00000 n 
-0000000592 00000 n 
-0000000872 00000 n 
-0000000931 00000 n 
+0000006501 00000 n 
+0000008318 00000 n 
+0000000015 00000 n 
+0000000120 00000 n 
+0000006558 00000 n 
+0000006683 00000 n 
+0000006813 00000 n 
+0000006946 00000 n 
+0000007083 00000 n 
+0000007206 00000 n 
+0000007335 00000 n 
+0000007467 00000 n 
+0000007603 00000 n 
+0000007731 00000 n 
+0000007858 00000 n 
+0000007987 00000 n 
+0000008120 00000 n 
+0000008222 00000 n 
+0000008566 00000 n 
+0000008652 00000 n 
 trailer
 <<
-/ID 
-[<ac885cee8c49211c1cb119e695fced42><ac885cee8c49211c1cb119e695fced42>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 6 0 R
-/Root 5 0 R
-/Size 9
+/Size 21
+/Root 20 0 R
+/Info 19 0 R
+/ID [ <A942F8CD3002B8E0D2D84CE57B72CD07> <A942F8CD3002B8E0D2D84CE57B72CD07> ]
 >>
 startxref
-2254
+8756
 %%EOF

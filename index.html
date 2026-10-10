@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+    </script>
     <title>Vrenelli Agustin // Cyber Portfolio</title>
     <meta name="description" content="Portfolio of Vrenelli M. Agustin, BSIT student at Isabela State University - Cauayan Campus. Network and security focus.">
     <!-- Tailwind CSS CDN -->
@@ -14,14 +17,16 @@
                 extend: {
                     colors: {
                         cyber: {
-                            black: '#050508',
-                            dark: '#0a0a12',
-                            panel: '#10101d',
-                            cyan: '#00f0ff',
-                            magenta: '#ff007f',
-                            yellow: '#f4ee00',
-                            purple: '#9d00ff',
-                            gray: '#8a8a9e'
+                            black: 'rgb(var(--cyber-black-rgb) / <alpha-value>)',
+                            dark: 'rgb(var(--cyber-dark-rgb) / <alpha-value>)',
+                            panel: 'rgb(var(--cyber-panel-rgb) / <alpha-value>)',
+                            cyan: 'rgb(var(--cyber-cyan-rgb) / <alpha-value>)',
+                            magenta: 'rgb(var(--cyber-magenta-rgb) / <alpha-value>)',
+                            yellow: 'rgb(var(--cyber-yellow-rgb) / <alpha-value>)',
+                            purple: 'rgb(var(--cyber-purple-rgb) / <alpha-value>)',
+                            gray: 'rgb(var(--cyber-gray-rgb) / <alpha-value>)',
+                            fg: 'rgb(var(--cyber-fg-rgb) / <alpha-value>)',
+                            on: 'rgb(var(--cyber-on-rgb) / <alpha-value>)'
                         }
                     },
                     fontFamily: {
@@ -29,9 +34,9 @@
                         sans: ['Inter', 'sans-serif']
                     },
                     boxShadow: {
-                        'neon-cyan': '0 0 15px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.2)',
-                        'neon-magenta': '0 0 15px rgba(255, 0, 127, 0.4), inset 0 0 15px rgba(255, 0, 127, 0.2)',
-                        'neon-yellow': '0 0 15px rgba(244, 238, 0, 0.4), inset 0 0 15px rgba(244, 238, 0, 0.2)',
+                        'neon-cyan': '0 0 15px rgb(var(--cyber-cyan-rgb) / 0.4), inset 0 0 15px rgb(var(--cyber-cyan-rgb) / 0.2)',
+                        'neon-magenta': '0 0 15px rgb(var(--cyber-magenta-rgb) / 0.4), inset 0 0 15px rgb(var(--cyber-magenta-rgb) / 0.2)',
+                        'neon-yellow': '0 0 15px rgb(var(--cyber-yellow-rgb) / 0.4), inset 0 0 15px rgb(var(--cyber-yellow-rgb) / 0.2)',
                     }
                 }
             }
@@ -42,9 +47,35 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;600;700&display=swap');
 
+        :root {
+            --cyber-black-rgb: 244 246 250;
+            --cyber-dark-rgb: 232 236 244;
+            --cyber-panel-rgb: 255 255 255;
+            --cyber-cyan-rgb: 0 116 140;
+            --cyber-magenta-rgb: 190 24 93;
+            --cyber-yellow-rgb: 133 105 0;
+            --cyber-purple-rgb: 109 40 217;
+            --cyber-gray-rgb: 82 90 108;
+            --cyber-fg-rgb: 17 22 34;
+            --cyber-on-rgb: 255 255 255;
+        }
+
+        .dark {
+            --cyber-black-rgb: 5 5 8;
+            --cyber-dark-rgb: 10 10 18;
+            --cyber-panel-rgb: 16 16 29;
+            --cyber-cyan-rgb: 0 240 255;
+            --cyber-magenta-rgb: 255 0 127;
+            --cyber-yellow-rgb: 244 238 0;
+            --cyber-purple-rgb: 157 0 255;
+            --cyber-gray-rgb: 138 138 158;
+            --cyber-fg-rgb: 255 255 255;
+            --cyber-on-rgb: 5 5 8;
+        }
+
         body {
-            background-color: #050508;
-            color: #e0e0e0;
+            background-color: rgb(var(--cyber-black-rgb));
+            color: rgb(var(--cyber-fg-rgb));
             font-family: 'Rajdhani', sans-serif;
             overflow-x: hidden;
         }
@@ -55,8 +86,8 @@
 
         .cyber-grid {
             background-image:
-                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 0, 127, 0.03) 1px, transparent 1px);
+                linear-gradient(rgb(var(--cyber-cyan-rgb) / 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgb(var(--cyber-magenta-rgb) / 0.05) 1px, transparent 1px);
             background-size: 30px 30px;
         }
 
@@ -69,6 +100,14 @@
                 rgba(0, 0, 0, 0.3)
             );
             background-size: 100% 4px;
+        }
+
+        .dark .scanline {
+            display: block;
+        }
+
+        html:not(.dark) .scanline {
+            display: none;
         }
 
         .glitch {
@@ -86,12 +125,12 @@
         }
         .glitch::before {
             left: 2px;
-            text-shadow: -2px 0 #ff007f;
+            text-shadow: -2px 0 rgb(var(--cyber-magenta-rgb));
             animation: glitch-anim 3s infinite linear alternate-reverse;
         }
         .glitch::after {
             left: -2px;
-            text-shadow: -2px 0 #00f0ff, 0 2px #ff007f;
+            text-shadow: -2px 0 rgb(var(--cyber-cyan-rgb)), 0 2px rgb(var(--cyber-magenta-rgb));
             animation: glitch-anim2 2.5s infinite linear alternate-reverse;
         }
 
@@ -142,21 +181,21 @@
             );
         }
 
-        .glow-cyan { text-shadow: 0 0 8px rgba(0, 240, 255, 0.8); }
-        .glow-magenta { text-shadow: 0 0 8px rgba(255, 0, 127, 0.8); }
-        .glow-yellow { text-shadow: 0 0 8px rgba(244, 238, 0, 0.8); }
+        .glow-cyan { text-shadow: 0 0 8px rgb(var(--cyber-cyan-rgb) / 0.8); }
+        .glow-magenta { text-shadow: 0 0 8px rgb(var(--cyber-magenta-rgb) / 0.8); }
+        .glow-yellow { text-shadow: 0 0 8px rgb(var(--cyber-yellow-rgb) / 0.8); }
 
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a12; }
-        ::-webkit-scrollbar-thumb { background: #00f0ff; box-shadow: 0 0 10px #00f0ff; }
-        ::-webkit-scrollbar-thumb:hover { background: #ff007f; }
+        ::-webkit-scrollbar-track { background: rgb(var(--cyber-dark-rgb)); }
+        ::-webkit-scrollbar-thumb { background: rgb(var(--cyber-cyan-rgb)); }
+        ::-webkit-scrollbar-thumb:hover { background: rgb(var(--cyber-magenta-rgb)); }
 
         /* Certificate modal */
         #cert-modal { display: none; }
         #cert-modal.open { display: flex; }
     </style>
 </head>
-<body class="cyber-grid relative min-h-screen selection:bg-cyber-cyan selection:text-black">
+<body class="cyber-grid relative min-h-screen selection:bg-cyber-cyan selection:text-cyber-on">
     <!-- Scanline overlay -->
     <div class="fixed inset-0 scanline pointer-events-none z-50 opacity-20"></div>
 
@@ -164,7 +203,7 @@
     <header class="fixed top-0 left-0 w-full z-40 bg-cyber-black/80 backdrop-blur-md border-b border-cyber-cyan/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-cyber-dark border border-cyber-cyan flex items-center justify-center text-cyber-cyan font-cyber font-bold text-lg shadow-[0_0_10px_rgba(0,240,255,0.3)] cyber-border">
+                <div class="w-10 h-10 bg-cyber-dark border border-cyber-cyan flex items-center justify-center text-cyber-cyan font-cyber font-bold text-lg shadow-neon-cyan cyber-border">
                     VA
                 </div>
                 <div>
@@ -190,6 +229,12 @@
                 <span class="text-cyber-magenta">NET_CONNECTED</span>
             </div>
 
+            <!-- Theme Toggle -->
+            <button id="theme-btn" class="hidden md:flex items-center space-x-2 bg-cyber-panel border border-cyber-cyan/40 hover:border-cyber-cyan px-3 py-1.5 cyber-border text-xs font-cyber text-cyber-cyan hover:text-cyber-magenta transition-colors focus:outline-none" aria-label="Toggle dark mode">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+                <span id="theme-label" class="hidden lg:inline">DARK</span>
+            </button>
+
             <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-cyber-cyan text-2xl focus:outline-none" aria-label="Open menu">
                 <i class="fa-solid fa-terminal"></i>
@@ -205,6 +250,9 @@
             <a href="#certificates" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 05.CERTS</a>
             <a href="#education" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 06.EDU</a>
             <a href="#contact" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 07.TRANSMIT</a>
+            <button id="theme-btn-m" class="w-full text-left text-cyber-gray hover:text-cyber-cyan py-1 focus:outline-none">
+                <i id="theme-icon-m" class="fa-solid fa-moon mr-2"></i><span id="theme-label-m">// THEME: DARK</span>
+            </button>
         </div>
     </header>
 
@@ -219,7 +267,7 @@
                     </div>
 
                     <h1 class="text-4xl sm:text-6xl font-black tracking-tight uppercase">
-                        <span class="block text-white">HI, I'M</span>
+                        <span class="block text-cyber-fg">HI, I'M</span>
                         <span class="glitch text-cyber-cyan glow-cyan" data-text="VRENELLI AGUSTIN">VRENELLI AGUSTIN</span>
                     </h1>
 
@@ -233,11 +281,11 @@
                     </p>
 
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#projects" class="px-8 py-3.5 bg-cyber-cyan text-cyber-black font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-white transition-all shadow-[0_0_20px_rgba(0,240,255,0.5)] flex items-center space-x-2">
+                        <a href="#projects" class="px-8 py-3.5 bg-cyber-cyan text-cyber-black font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-cyber-on transition-all shadow-neon-cyan flex items-center space-x-2">
                             <span>EXPLORE WORKS</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="assets/resume.pdf" download class="px-8 py-3.5 bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold font-cyber cyber-border hover:bg-yellow-400 hover:text-black transition-all shadow-[0_0_15px_rgba(244,238,0,0.25)] flex items-center space-x-2">
+                        <a href="assets/resume.pdf" download class="px-8 py-3.5 bg-transparent border-2 border-cyber-yellow text-cyber-yellow font-bold font-cyber cyber-border hover:bg-cyber-yellow hover:text-cyber-on transition-all shadow-neon-yellow flex items-center space-x-2">
                             <span>DOWNLOAD RESUME</span>
                             <i class="fa-solid fa-download"></i>
                         </a>
@@ -265,14 +313,14 @@
 
                         <div class="relative my-4 flex items-center justify-center">
                             <div class="w-36 h-36 rounded-full border-2 border-dashed border-cyber-magenta animate-spin duration-1000 absolute"></div>
-                            <div class="w-28 h-28 rounded-full border-2 border-cyber-cyan flex items-center justify-center bg-cyber-dark/80 shadow-[0_0_20px_rgba(0,240,255,0.3)] overflow-hidden">
+                            <div class="w-28 h-28 rounded-full border-2 border-cyber-cyan flex items-center justify-center bg-cyber-dark/80 shadow-neon-cyan overflow-hidden">
                                 <img src="assets/profile.png" alt="Vrenelli M. Agustin" class="w-full h-full object-cover">
                             </div>
                         </div>
 
                         <div class="space-y-2 font-cyber text-xs">
                             <div class="flex justify-between text-cyber-gray">
-                                FOCUS: <span class="text-white">NETWORK &amp; SECURITY</span>
+                                FOCUS: <span class="text-cyber-fg">NETWORK &amp; SECURITY</span>
                             </div>
                             <div class="flex justify-between text-cyber-gray">
                                 CAMPUS: <span class="text-cyber-cyan">ISU // CAUAYAN</span>
@@ -291,7 +339,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12">
                     <span class="font-cyber text-cyber-magenta text-sm tracking-widest">// SECTION 02</span>
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-cyber-fg mt-1">
                         ABOUT <span class="text-cyber-cyan glow-cyan">ME</span>
                     </h2>
                 </div>
@@ -299,7 +347,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-6 space-y-6">
                         <p class="text-lg text-cyber-gray leading-relaxed">
-                            I am <strong class="text-white">Vrenelli M. Agustin</strong>, a BSIT student at Isabela State University &ndash; Cauayan Campus. I am interested in learning how technology can be used to build reliable, secure, and useful systems.
+                            I am <strong class="text-cyber-fg">Vrenelli M. Agustin</strong>, a BSIT student at Isabela State University &ndash; Cauayan Campus. I am interested in learning how technology can be used to build reliable, secure, and useful systems.
                         </p>
                         <p class="text-lg text-cyber-gray leading-relaxed">
                             My objective is to continuously develop my technical and professional skills in information technology &mdash; particularly in networking and security &mdash; and apply what I learn to practical systems and real-world IT environments.
@@ -323,7 +371,7 @@
                             <div class="flex items-center justify-between border-b border-cyber-cyan/30 pb-3 mb-4">
                                 <div class="flex items-center space-x-2">
                                     <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-                                    <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-cyber-yellow inline-block"></span>
                                     <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
                                     <span class="text-cyber-cyan text-xs ml-2">vrenelli@matrix-terminal:~</span>
                                 </div>
@@ -331,10 +379,10 @@
                             </div>
                             <div class="space-y-2 text-cyber-gray">
                                 <p><span class="text-cyber-cyan">&gt;</span> cat /bio/vrenelli_agustin.txt</p>
-                                <p class="text-white">NAME: Vrenelli M. Agustin</p>
-                                <p class="text-white">COURSE: BS Information Technology</p>
-                                <p class="text-white">SCHOOL: Isabela State University &ndash; Cauayan Campus</p>
-                                <p class="text-white">INTEREST: Network &amp; Security</p>
+                                <p class="text-cyber-fg">NAME: Vrenelli M. Agustin</p>
+                                <p class="text-cyber-fg">COURSE: BS Information Technology</p>
+                                <p class="text-cyber-fg">SCHOOL: Isabela State University &ndash; Cauayan Campus</p>
+                                <p class="text-cyber-fg">INTEREST: Network &amp; Security</p>
                                 <p><span class="text-cyber-cyan">&gt;</span> status --check</p>
                                 <p class="text-cyber-magenta">[OK] All core neural links active and synchronized.</p>
                                 <div class="flex items-center space-x-1 pt-2">
@@ -353,7 +401,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center">
                     <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 03</span>
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-cyber-fg mt-1">
                         TECHNICAL <span class="text-cyber-magenta glow-magenta">CAPABILITIES</span>
                     </h2>
                 </div>
@@ -365,7 +413,7 @@
                             <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan text-cyber-cyan">
                                 <i class="fa-solid fa-code text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-cyber text-white">TECHNICAL SKILLS</h3>
+                            <h3 class="text-xl font-bold font-cyber text-cyber-fg">TECHNICAL SKILLS</h3>
                         </div>
                         <div class="flex flex-wrap gap-2 font-cyber text-sm">
                             <span class="px-3 py-2 bg-cyber-dark border border-cyber-cyan/50 text-cyber-cyan">// HTML / CSS</span>
@@ -381,7 +429,7 @@
                             <div class="p-3 bg-cyber-magenta/10 border border-cyber-magenta text-cyber-magenta">
                                 <i class="fa-solid fa-users text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-cyber text-white">PROFESSIONAL SKILLS</h3>
+                            <h3 class="text-xl font-bold font-cyber text-cyber-fg">PROFESSIONAL SKILLS</h3>
                         </div>
                         <div class="flex flex-wrap gap-2 font-cyber text-sm">
                             <span class="px-3 py-2 bg-cyber-dark border border-cyber-magenta/50 text-cyber-magenta">// Communication</span>
@@ -393,14 +441,14 @@
                     </div>
 
                     <!-- Area of Interest -->
-                    <div class="bg-cyber-panel border border-yellow-500/40 cyber-border p-6 shadow-neon-yellow hover:border-yellow-400 transition-all duration-300">
+                    <div class="bg-cyber-panel border border-cyber-yellow/40 cyber-border p-6 shadow-neon-yellow hover:border-cyber-yellow transition-all duration-300">
                         <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-3 bg-yellow-500/10 border border-yellow-400 text-yellow-400">
+                            <div class="p-3 bg-cyber-yellow/10 border border-cyber-yellow text-cyber-yellow">
                                 <i class="fa-solid fa-shield-halved text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold font-cyber text-white">AREA OF INTEREST</h3>
+                            <h3 class="text-xl font-bold font-cyber text-cyber-fg">AREA OF INTEREST</h3>
                         </div>
-                        <p class="text-yellow-400 text-2xl font-black font-cyber mb-4">NETWORK &amp; SECURITY</p>
+                        <p class="text-cyber-yellow text-2xl font-black font-cyber mb-4">NETWORK &amp; SECURITY</p>
                         <p class="text-cyber-gray text-sm leading-relaxed">
                             Focused on building reliable, secure and useful systems &mdash; from LAN design and network defense to secure web applications.
                         </p>
@@ -415,7 +463,7 @@
                 <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between">
                     <div>
                         <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 04</span>
-                        <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                        <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-cyber-fg mt-1">
                             FEATURED <span class="text-cyber-cyan glow-cyan">WORKS</span>
                         </h2>
                     </div>
@@ -431,7 +479,7 @@
                                 <i class="fa-solid fa-network-wired text-5xl text-cyber-cyan group-hover:scale-110 transition-transform duration-300"></i>
                                 <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-cyan text-cyber-cyan">CAPSTONE</span>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyber-cyan transition-colors">SECURE LAN-BASED CAMPUS CASHIER SYSTEM</h3>
+                            <h3 class="text-xl font-bold text-cyber-fg mb-2 group-hover:text-cyber-cyan transition-colors">SECURE LAN-BASED CAMPUS CASHIER SYSTEM</h3>
                             <p class="text-cyber-gray text-sm mb-4 leading-relaxed">
                                 A proposed LAN-based cashier collection and audit-ready reporting system for Isabela State University Cauayan Campus, focused on rentals and merchandise collections.
                             </p>
@@ -465,7 +513,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center">
                     <span class="font-cyber text-cyber-magenta text-sm tracking-widest">// SECTION 05</span>
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-cyber-fg mt-1">
                         CERTIFICATES <span class="text-cyber-yellow glow-yellow">&amp; CREDENTIALS</span>
                     </h2>
                     <p class="text-cyber-gray font-cyber text-sm mt-3">// CLICK A RECORD TO PREVIEW THE ARCHIVE</p>
@@ -481,7 +529,7 @@
                                 <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-cyan text-cyber-cyan">ZOOM</span>
                             </div>
                             <span class="tag font-cyber text-cyber-cyan text-xs tracking-widest block mb-1">TRAINING</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-cyan transition-colors">Introduction to Cyber Security: Stay Safe Online</h3>
+                            <h3 class="text-lg font-bold text-cyber-fg group-hover:text-cyber-cyan transition-colors">Introduction to Cyber Security: Stay Safe Online</h3>
                         </button>
                         <p class="text-cyber-gray text-sm font-cyber mt-2">OpenLearn &middot; The Open University</p>
                         <small class="text-cyber-gray font-cyber text-xs block mt-1">May 20, 2025</small>
@@ -497,7 +545,7 @@
                                 <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-magenta text-cyber-magenta">ZOOM</span>
                             </div>
                             <span class="tag font-cyber text-cyber-magenta text-xs tracking-widest block mb-1">TRAINING</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-magenta transition-colors">Gamified Intelligent Cyber Aptitude and Skills Training (GICAST)</h3>
+                            <h3 class="text-lg font-bold text-cyber-fg group-hover:text-cyber-magenta transition-colors">Gamified Intelligent Cyber Aptitude and Skills Training (GICAST)</h3>
                         </button>
                         <p class="text-cyber-gray text-sm font-cyber mt-2">OpenLearn &middot; The Open University</p>
                         <small class="text-cyber-gray font-cyber text-xs block mt-1">May 19, 2025</small>
@@ -505,19 +553,19 @@
                     </div>
 
                     <!-- Cert 3 -->
-                    <div class="bg-cyber-panel border border-yellow-500/40 cyber-border p-6 group hover:border-yellow-400 hover:shadow-neon-yellow transition-all duration-300">
+                    <div class="bg-cyber-panel border border-cyber-yellow/40 cyber-border p-6 group hover:border-cyber-yellow hover:shadow-neon-yellow transition-all duration-300">
                         <button class="cert-open w-full text-left" data-img="assets/certificates/certificate-3.jpg" data-title="Cyber Threat Management">
-                            <div class="h-40 bg-cyber-dark border border-yellow-500/30 mb-5 relative overflow-hidden flex items-center justify-center">
-                                <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent"></div>
+                            <div class="h-40 bg-cyber-dark border border-cyber-yellow/30 mb-5 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-yellow/20 to-transparent"></div>
                                 <img src="assets/certificates/certificate-3.jpg" alt="Cyber Threat Management certificate" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
-                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-yellow-400 text-yellow-400">ZOOM</span>
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-yellow text-cyber-yellow">ZOOM</span>
                             </div>
-                            <span class="tag font-cyber text-yellow-400 text-xs tracking-widest block mb-1">TRAINING</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">Cyber Threat Management</h3>
+                            <span class="tag font-cyber text-cyber-yellow text-xs tracking-widest block mb-1">TRAINING</span>
+                            <h3 class="text-lg font-bold text-cyber-fg group-hover:text-cyber-yellow transition-colors">Cyber Threat Management</h3>
                         </button>
                         <p class="text-cyber-gray text-sm font-cyber mt-2">Cisco Networking Academy</p>
                         <small class="text-cyber-gray font-cyber text-xs block mt-1">January 28, 2026</small>
-                        <a href="assets/certificates/certificate-3.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-yellow-400 underline">OPEN IMAGE &nearr;</a>
+                        <a href="assets/certificates/certificate-3.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-cyber-yellow underline">OPEN IMAGE &nearr;</a>
                     </div>
 
                     <!-- Cert 4 -->
@@ -529,7 +577,7 @@
                                 <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-cyan text-cyber-cyan">ZOOM</span>
                             </div>
                             <span class="tag font-cyber text-cyber-cyan text-xs tracking-widest block mb-1">TRAINING</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-cyan transition-colors">Introduction to Cybersecurity</h3>
+                            <h3 class="text-lg font-bold text-cyber-fg group-hover:text-cyber-cyan transition-colors">Introduction to Cybersecurity</h3>
                         </button>
                         <p class="text-cyber-gray text-sm font-cyber mt-2">Cisco Networking Academy</p>
                         <small class="text-cyber-gray font-cyber text-xs block mt-1">January 17, 2026</small>
@@ -545,7 +593,7 @@
                                 <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-magenta text-cyber-magenta">ZOOM</span>
                             </div>
                             <span class="tag font-cyber text-cyber-magenta text-xs tracking-widest block mb-1">CERTIFICATION</span>
-                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-magenta transition-colors">Information Technology Specialist: Networking</h3>
+                            <h3 class="text-lg font-bold text-cyber-fg group-hover:text-cyber-magenta transition-colors">Information Technology Specialist: Networking</h3>
                         </button>
                         <p class="text-cyber-gray text-sm font-cyber mt-2">Information Technology Specialist</p>
                         <small class="text-cyber-gray font-cyber text-xs block mt-1">December 8, 2025</small>
@@ -560,18 +608,18 @@
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center">
                     <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 06</span>
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-cyber-fg mt-1">
                         EDUCATION <span class="text-cyber-cyan glow-cyan">TIMELINE</span>
                     </h2>
                 </div>
 
                 <div class="relative border-l-2 border-cyber-cyan/40 ml-4 md:ml-32 space-y-12">
                     <div class="relative pl-8 md:pl-12 group">
-                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyber-cyan border-2 border-cyber-black shadow-[0_0_10px_#00f0ff] group-hover:scale-125 transition-transform"></div>
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyber-cyan border-2 border-cyber-black shadow-neon-cyan group-hover:scale-125 transition-transform"></div>
                         <div class="absolute -left-32 top-1 hidden md:block font-cyber text-cyber-cyan text-sm">2023 &mdash; PRESENT</div>
                         <div class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-6 shadow-neon-cyan">
                             <span class="md:hidden font-cyber text-cyber-cyan text-xs block mb-1">2023 &mdash; PRESENT</span>
-                            <h3 class="text-xl font-bold text-white">Bachelor of Science in Information Technology</h3>
+                            <h3 class="text-xl font-bold text-cyber-fg">Bachelor of Science in Information Technology</h3>
                             <h4 class="font-cyber text-cyber-magenta text-sm mb-3">Isabela State University &ndash; Cauayan Campus</h4>
                             <p class="text-cyber-gray text-sm leading-relaxed">
                                 Coursework spanning web technologies, databases, networking and information security. Area of interest: Network &amp; Security.
@@ -580,11 +628,11 @@
                     </div>
 
                     <div class="relative pl-8 md:pl-12 group">
-                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyber-magenta border-2 border-cyber-black shadow-[0_0_10px_#ff007f] group-hover:scale-125 transition-transform"></div>
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyber-magenta border-2 border-cyber-black shadow-neon-magenta group-hover:scale-125 transition-transform"></div>
                         <div class="absolute -left-32 top-1 hidden md:block font-cyber text-cyber-magenta text-sm">2017 &mdash; 2023</div>
                         <div class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-6 shadow-neon-magenta">
                             <span class="md:hidden font-cyber text-cyber-magenta text-xs block mb-1">2017 &mdash; 2023</span>
-                            <h3 class="text-xl font-bold text-white">Secondary Education</h3>
+                            <h3 class="text-xl font-bold text-cyber-fg">Secondary Education</h3>
                             <h4 class="font-cyber text-cyber-cyan text-sm mb-3">Naguilian National High School</h4>
                             <p class="text-cyber-gray text-sm leading-relaxed">
                                 Senior high school graduate, 2023.
@@ -600,7 +648,7 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12 text-center">
                     <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 07</span>
-                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-cyber-fg mt-1">
                         INITIATE <span class="text-cyber-cyan glow-cyan">TRANSMISSION</span>
                     </h2>
                     <p class="text-cyber-gray font-cyber text-sm mt-2">Send a direct encrypted signal to Vrenelli Agustin's terminal.</p>
@@ -616,9 +664,9 @@
                         <small class="text-cyber-gray text-xs block tracking-widest">PHONE</small>
                         <span class="text-cyber-magenta">09918922775</span>
                     </a>
-                    <a href="https://www.facebook.com/share/1DZdVxciyU/" target="_blank" rel="noopener" class="bg-cyber-panel border border-yellow-500/40 cyber-border p-4 hover:border-yellow-400 hover:shadow-neon-yellow transition-all">
+                    <a href="https://www.facebook.com/share/1DZdVxciyU/" target="_blank" rel="noopener" class="bg-cyber-panel border border-cyber-yellow/40 cyber-border p-4 hover:border-cyber-yellow hover:shadow-neon-yellow transition-all">
                         <small class="text-cyber-gray text-xs block tracking-widest">FACEBOOK</small>
-                        <span class="text-yellow-400">Vrenelli M. Agustin</span>
+                        <span class="text-cyber-yellow">Vrenelli M. Agustin</span>
                     </a>
                 </div>
 
@@ -635,22 +683,22 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="sender-name" class="block font-cyber text-xs text-cyber-cyan mb-2">// AGENT_NAME</label>
-                                <input type="text" id="sender-name" required placeholder="Enter your handle or name..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-white font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all">
+                                <input type="text" id="sender-name" required placeholder="Enter your handle or name..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-cyber-fg font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-neon-cyan transition-all">
                             </div>
                             <div>
                                 <label for="sender-email" class="block font-cyber text-xs text-cyber-cyan mb-2">// RETURN_FREQUENCY (EMAIL)</label>
-                                <input type="email" id="sender-email" required placeholder="Enter your email address..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-white font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all">
+                                <input type="email" id="sender-email" required placeholder="Enter your email address..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-cyber-fg font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-neon-cyan transition-all">
                             </div>
                         </div>
 
                         <div>
                             <label for="sender-message" class="block font-cyber text-xs text-cyber-cyan mb-2">// TRANSMISSION_PAYLOAD (MESSAGE)</label>
-                            <textarea id="sender-message" required rows="5" placeholder="Type your message or project brief here..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-white font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all"></textarea>
+                            <textarea id="sender-message" required rows="5" placeholder="Type your message or project brief here..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-cyber-fg font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-neon-cyan transition-all"></textarea>
                         </div>
 
                         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div id="form-status" class="font-cyber text-xs text-cyber-magenta h-6"></div>
-                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-cyber-cyan text-cyber-black font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-white transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2">
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-cyber-cyan text-cyber-black font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-cyber-on transition-all shadow-neon-cyan flex items-center justify-center space-x-2">
                                 <i class="fa-solid fa-paper-plane"></i>
                                 <span>TRANSMIT SIGNAL</span>
                             </button>
@@ -674,7 +722,7 @@
                     VA
                 </div>
                 <div>
-                    <span class="text-white text-sm font-bold tracking-wider">VRENELLI M. AGUSTIN</span>
+                    <span class="text-cyber-fg text-sm font-bold tracking-wider">VRENELLI M. AGUSTIN</span>
                     <span class="text-xs text-cyber-gray block">&copy; 2026 ALL RIGHTS RESERVED.</span>
                 </div>
             </div>
@@ -696,7 +744,7 @@
                 <span><i class="fa-solid fa-folder-open mr-2"></i>CREDENTIAL_ARCHIVE</span>
                 <button id="cert-close" class="text-cyber-magenta text-lg focus:outline-none" aria-label="Close preview"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <h3 id="cert-title" class="text-white font-bold text-lg mb-4"></h3>
+            <h3 id="cert-title" class="text-cyber-fg font-bold text-lg mb-4"></h3>
             <img id="cert-img" src="" alt="" class="w-full h-auto border border-cyber-cyan/40 bg-cyber-dark">
         </div>
     </div>
@@ -714,6 +762,33 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // Theme Toggle (light default, dark opt-in)
+        (function () {
+            const root = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            const label = document.getElementById('theme-label');
+            const iconM = document.getElementById('theme-icon-m');
+            const labelM = document.getElementById('theme-label-m');
+
+            function render() {
+                const dark = root.classList.contains('dark');
+                icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+                iconM.className = dark ? 'fa-solid fa-sun mr-2' : 'fa-solid fa-moon mr-2';
+                label.textContent = dark ? 'LIGHT' : 'DARK';
+                labelM.textContent = dark ? '// THEME: LIGHT' : '// THEME: DARK';
+            }
+
+            function toggle() {
+                root.classList.toggle('dark');
+                localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+                render();
+            }
+
+            document.getElementById('theme-btn').addEventListener('click', toggle);
+            document.getElementById('theme-btn-m').addEventListener('click', toggle);
+            render();
+        })();
 
         // Typing Effect in Hero Section
         const words = [
@@ -813,14 +888,14 @@
                 <i class="fa-solid fa-lock"></i>
             </div>
             <span class="text-[11px] font-cyber font-bold bg-cyber-magenta/10 text-cyber-magenta px-3 py-1 rounded-full uppercase tracking-wider border border-cyber-magenta/40">Payment Required</span>
-            <h3 class="text-2xl sm:text-3xl font-cyber font-extrabold text-white mt-3">This Portfolio Is Locked</h3>
+            <h3 class="text-2xl sm:text-3xl font-cyber font-extrabold text-cyber-fg mt-3">This Portfolio Is Locked</h3>
             <p class="text-sm text-cyber-gray mt-3 leading-relaxed">
                 The portfolio is locked until the payment is completed. Enter the email address you paid with — you'll sign in to PayContract and, once your payment is verified, come straight back here unlocked.
             </p>
 
             <label for="paywall-email" class="block text-left text-[11px] font-cyber font-bold text-cyber-gray uppercase tracking-wider mt-6 mb-2">Email address used for payment</label>
             <input id="paywall-email" type="email" placeholder="you@example.com" autocomplete="email" spellcheck="false"
-                class="w-full rounded-lg bg-cyber-black border border-cyber-cyan/40 focus:border-cyber-cyan focus:ring-2 focus:ring-cyber-cyan/20 px-4 py-3 font-cyber text-sm text-white placeholder-cyber-gray outline-none transition" />
+                class="w-full rounded-lg bg-cyber-black border border-cyber-cyan/40 focus:border-cyber-cyan focus:ring-2 focus:ring-cyber-cyan/20 px-4 py-3 font-cyber text-sm text-cyber-fg placeholder-cyber-gray outline-none transition" />
 
             <button id="paywall-continue" type="button"
                 class="mt-3 w-full inline-flex items-center justify-center gap-2 bg-cyber-cyan hover:shadow-neon-cyan disabled:opacity-60 text-cyber-black font-cyber font-bold py-3.5 rounded-lg transition transform active:scale-95 cursor-pointer">
