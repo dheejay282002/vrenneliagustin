@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrenelli Agustin // Cyber Portfolio</title>
+    <meta name="description" content="Portfolio of Vrenelli M. Agustin, BSIT student at Isabela State University - Cauayan Campus. Network and security focus.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            black: '#050508',
+                            dark: '#0a0a12',
+                            panel: '#10101d',
+                            cyan: '#00f0ff',
+                            magenta: '#ff007f',
+                            yellow: '#f4ee00',
+                            purple: '#9d00ff',
+                            gray: '#8a8a9e'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['Courier New', 'Courier', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 15px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.2)',
+                        'neon-magenta': '0 0 15px rgba(255, 0, 127, 0.4), inset 0 0 15px rgba(255, 0, 127, 0.2)',
+                        'neon-yellow': '0 0 15px rgba(244, 238, 0, 0.4), inset 0 0 15px rgba(244, 238, 0, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Cyber Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;600;700&display=swap');
+
+        body {
+            background-color: #050508;
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-cyber {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .cyber-grid {
+            background-image:
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 127, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .scanline {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(0, 0, 0, 0.3)
+            );
+            background-size: 100% 4px;
+        }
+
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip: rect(0, 0, 0, 0);
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff007f;
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00f0ff, 0 2px #ff007f;
+            animation: glitch-anim2 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); transform: skew(0.3deg); }
+            10% { clip: rect(12px, 9999px, 59px, 0); transform: skew(0.8deg); }
+            20% { clip: rect(85px, 9999px, 14px, 0); transform: skew(0.1deg); }
+            30% { clip: rect(42px, 9999px, 88px, 0); transform: skew(0.5deg); }
+            40% { clip: rect(10px, 9999px, 45px, 0); transform: skew(0.2deg); }
+            50% { clip: rect(78px, 9999px, 99px, 0); transform: skew(0.7deg); }
+            60% { clip: rect(22px, 9999px, 33px, 0); transform: skew(0.4deg); }
+            70% { clip: rect(64px, 9999px, 72px, 0); transform: skew(0.1deg); }
+            80% { clip: rect(5px, 9999px, 11px, 0); transform: skew(0.9deg); }
+            90% { clip: rect(91px, 9999px, 60px, 0); transform: skew(0.3deg); }
+            100% { clip: rect(40px, 9999px, 50px, 0); transform: skew(0.6deg); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(76px, 9999px, 12px, 0); transform: skew(0.5deg); }
+            15% { clip: rect(34px, 9999px, 90px, 0); transform: skew(0.2deg); }
+            30% { clip: rect(12px, 9999px, 43px, 0); transform: skew(0.8deg); }
+            45% { clip: rect(88px, 9999px, 21px, 0); transform: skew(0.1deg); }
+            60% { clip: rect(50px, 9999px, 76px, 0); transform: skew(0.6deg); }
+            75% { clip: rect(19px, 9999px, 83px, 0); transform: skew(0.4deg); }
+            90% { clip: rect(60px, 9999px, 15px, 0); transform: skew(0.7deg); }
+            100% { clip: rect(3px, 9999px, 55px, 0); transform: skew(0.3deg); }
+        }
+
+        .cyber-border {
+            clip-path: polygon(
+                0 0,
+                calc(100% - 15px) 0,
+                100% 15px,
+                100% 100%,
+                15px 100%,
+                0 calc(100% - 15px)
+            );
+        }
+
+        .cyber-border-inv {
+            clip-path: polygon(
+                15px 0,
+                100% 0,
+                100% calc(100% - 15px),
+                calc(100% - 15px) 100%,
+                0 100%,
+                0 15px
+            );
+        }
+
+        .glow-cyan { text-shadow: 0 0 8px rgba(0, 240, 255, 0.8); }
+        .glow-magenta { text-shadow: 0 0 8px rgba(255, 0, 127, 0.8); }
+        .glow-yellow { text-shadow: 0 0 8px rgba(244, 238, 0, 0.8); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a12; }
+        ::-webkit-scrollbar-thumb { background: #00f0ff; box-shadow: 0 0 10px #00f0ff; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff007f; }
+
+        /* Certificate modal */
+        #cert-modal { display: none; }
+        #cert-modal.open { display: flex; }
+    </style>
+</head>
+<body class="cyber-grid relative min-h-screen selection:bg-cyber-cyan selection:text-black">
+    <!-- Scanline overlay -->
+    <div class="fixed inset-0 scanline pointer-events-none z-50 opacity-20"></div>
+
+    <!-- HUD Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-cyber-black/80 backdrop-blur-md border-b border-cyber-cyan/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-cyber-dark border border-cyber-cyan flex items-center justify-center text-cyber-cyan font-cyber font-bold text-lg shadow-[0_0_10px_rgba(0,240,255,0.3)] cyber-border">
+                    VA
+                </div>
+                <div>
+                    <span class="font-cyber text-cyber-cyan tracking-wider font-bold text-lg block">VRENELLI.AGUSTIN</span>
+                    <span class="text-xs text-cyber-gray font-cyber uppercase tracking-widest block">SYS.VER // 2.0.26</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 font-cyber text-sm">
+                <a href="#hero" class="text-cyber-cyan hover:text-cyber-magenta transition-colors">// 01.INIT</a>
+                <a href="#about" class="text-cyber-gray hover:text-cyber-cyan transition-colors">// 02.ABOUT</a>
+                <a href="#skills" class="text-cyber-gray hover:text-cyber-cyan transition-colors">// 03.SKILLS</a>
+                <a href="#projects" class="text-cyber-gray hover:text-cyber-cyan transition-colors">// 04.WORKS</a>
+                <a href="#certificates" class="text-cyber-gray hover:text-cyber-cyan transition-colors">// 05.CERTS</a>
+                <a href="#education" class="text-cyber-gray hover:text-cyber-cyan transition-colors">// 06.EDU</a>
+                <a href="#contact" class="text-cyber-gray hover:text-cyber-cyan transition-colors">// 07.TRANSMIT</a>
+            </nav>
+
+            <!-- System Status Indicator -->
+            <div class="hidden lg:flex items-center space-x-2 bg-cyber-panel border border-cyber-magenta/40 px-3 py-1.5 cyber-border text-xs font-cyber">
+                <span class="w-2 h-2 rounded-full bg-cyber-magenta animate-pulse"></span>
+                <span class="text-cyber-magenta">NET_CONNECTED</span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-cyber-cyan text-2xl focus:outline-none" aria-label="Open menu">
+                <i class="fa-solid fa-terminal"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyber-dark/95 border-b border-cyber-cyan/30 px-4 py-4 space-y-3 font-cyber">
+            <a href="#hero" class="block text-cyber-cyan hover:text-cyber-magenta py-1">// 01.INIT</a>
+            <a href="#about" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 02.ABOUT</a>
+            <a href="#skills" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 03.SKILLS</a>
+            <a href="#projects" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 04.WORKS</a>
+            <a href="#certificates" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 05.CERTS</a>
+            <a href="#education" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 06.EDU</a>
+            <a href="#contact" class="block text-cyber-gray hover:text-cyber-cyan py-1">// 07.TRANSMIT</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-20">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[90vh] flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-cyber-cyan/10 border border-cyber-cyan/40 px-3 py-1 cyber-border text-cyber-cyan font-cyber text-xs">
+                        <i class="fa-solid fa-bolt animate-bounce"></i>
+                        <span>SYSTEM ONLINE: BSIT // NETWORK &amp; SECURITY</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight uppercase">
+                        <span class="block text-white">HI, I'M</span>
+                        <span class="glitch text-cyber-cyan glow-cyan" data-text="VRENELLI AGUSTIN">VRENELLI AGUSTIN</span>
+                    </h1>
+
+                    <div class="font-cyber text-lg sm:text-xl text-cyber-gray h-16 flex items-center">
+                        <span class="text-cyber-magenta mr-2">&gt;</span>
+                        <span id="typing-text" class="text-cyber-cyan font-bold border-r-2 border-cyber-cyan pr-1"></span>
+                    </div>
+
+                    <p class="text-cyber-gray text-lg max-w-xl">
+                        Bachelor of Science in Information Technology student at Isabela State University &ndash; Cauayan Campus, building practical skills in web technologies, databases, networking, and information security.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects" class="px-8 py-3.5 bg-cyber-cyan text-cyber-black font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-white transition-all shadow-[0_0_20px_rgba(0,240,255,0.5)] flex items-center space-x-2">
+                            <span>EXPLORE WORKS</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="https://timetosignandpay.vercel.app" target="_blank" rel="noopener" class="px-8 py-3.5 bg-transparent border-2 border-cyber-magenta text-cyber-magenta font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-white transition-all shadow-[0_0_15px_rgba(255,0,127,0.3)] flex items-center space-x-2">
+                            <span>TIME TO SIGN &amp; PAY</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        <a href="assets/resume.pdf" download class="px-8 py-3.5 bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold font-cyber cyber-border hover:bg-yellow-400 hover:text-black transition-all shadow-[0_0_15px_rgba(244,238,0,0.25)] flex items-center space-x-2">
+                            <span>DOWNLOAD RESUME</span>
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex flex-wrap gap-6 pt-2 font-cyber text-sm text-cyber-gray">
+                        <a href="https://www.facebook.com/share/1DZdVxciyU/" target="_blank" rel="noopener" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-facebook-f mr-2"></i>Facebook</a>
+                        <a href="mailto:vrenelli.agustin.3004@gmail.com" class="hover:text-cyber-cyan transition-colors"><i class="fa-solid fa-envelope mr-2"></i>Email</a>
+                        <a href="tel:09918922775" class="hover:text-cyber-cyan transition-colors"><i class="fa-solid fa-phone mr-2"></i>09918922775</a>
+                    </div>
+                </div>
+
+                <!-- Hero Holographic Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm aspect-square bg-cyber-panel border-2 border-cyber-cyan/60 cyber-border p-6 shadow-neon-cyan flex flex-col justify-between group hover:border-cyber-magenta transition-all duration-500">
+                        <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-cyber-cyan"></div>
+                        <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-cyber-cyan"></div>
+                        <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-cyber-cyan"></div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-cyber-cyan"></div>
+
+                        <div class="flex justify-between items-center border-b border-cyber-cyan/30 pb-3 font-cyber text-xs text-cyber-cyan">
+                            <span>ID: VA-ISU-2026</span>
+                            <span class="animate-pulse">&bull; SECURE</span>
+                        </div>
+
+                        <div class="relative my-4 flex items-center justify-center">
+                            <div class="w-36 h-36 rounded-full border-2 border-dashed border-cyber-magenta animate-spin duration-1000 absolute"></div>
+                            <div class="w-28 h-28 rounded-full border-2 border-cyber-cyan flex items-center justify-center bg-cyber-dark/80 shadow-[0_0_20px_rgba(0,240,255,0.3)] overflow-hidden">
+                                <img src="assets/profile.png" alt="Vrenelli M. Agustin" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 font-cyber text-xs">
+                            <div class="flex justify-between text-cyber-gray">
+                                FOCUS: <span class="text-white">NETWORK &amp; SECURITY</span>
+                            </div>
+                            <div class="flex justify-between text-cyber-gray">
+                                CAMPUS: <span class="text-cyber-cyan">ISU // CAUAYAN</span>
+                            </div>
+                            <div class="flex justify-between text-cyber-gray">
+                                STATUS: <span class="text-cyber-magenta">OPEN TO OPPORTUNITIES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-24 bg-cyber-dark/50 border-t border-b border-cyber-cyan/20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <span class="font-cyber text-cyber-magenta text-sm tracking-widest">// SECTION 02</span>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                        ABOUT <span class="text-cyber-cyan glow-cyan">ME</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6">
+                        <p class="text-lg text-cyber-gray leading-relaxed">
+                            I am <strong class="text-white">Vrenelli M. Agustin</strong>, a BSIT student at Isabela State University &ndash; Cauayan Campus. I am interested in learning how technology can be used to build reliable, secure, and useful systems.
+                        </p>
+                        <p class="text-lg text-cyber-gray leading-relaxed">
+                            My objective is to continuously develop my technical and professional skills in information technology &mdash; particularly in networking and security &mdash; and apply what I learn to practical systems and real-world IT environments.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 pt-4 font-cyber">
+                            <div class="bg-cyber-panel border border-cyber-cyan/40 p-4 cyber-border">
+                                <span class="text-cyber-cyan text-2xl font-bold block">BSIT</span>
+                                <span class="text-xs text-cyber-gray uppercase">2023 &mdash; Present</span>
+                            </div>
+                            <div class="bg-cyber-panel border border-cyber-magenta/40 p-4 cyber-border">
+                                <span class="text-cyber-magenta text-2xl font-bold block">05</span>
+                                <span class="text-xs text-cyber-gray uppercase">Certificates Earned</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cyber Terminal Log Box -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-cyber-black border-2 border-cyber-cyan/50 cyber-border p-6 shadow-neon-cyan font-cyber text-sm">
+                            <div class="flex items-center justify-between border-b border-cyber-cyan/30 pb-3 mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                    <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                                    <span class="text-cyber-cyan text-xs ml-2">vrenelli@matrix-terminal:~</span>
+                                </div>
+                                <span class="text-xs text-cyber-magenta">CLI_v4.2</span>
+                            </div>
+                            <div class="space-y-2 text-cyber-gray">
+                                <p><span class="text-cyber-cyan">&gt;</span> cat /bio/vrenelli_agustin.txt</p>
+                                <p class="text-white">NAME: Vrenelli M. Agustin</p>
+                                <p class="text-white">COURSE: BS Information Technology</p>
+                                <p class="text-white">SCHOOL: Isabela State University &ndash; Cauayan Campus</p>
+                                <p class="text-white">INTEREST: Network &amp; Security</p>
+                                <p><span class="text-cyber-cyan">&gt;</span> status --check</p>
+                                <p class="text-cyber-magenta">[OK] All core neural links active and synchronized.</p>
+                                <div class="flex items-center space-x-1 pt-2">
+                                    <span class="w-2 h-4 bg-cyber-cyan animate-pulse"></span>
+                                    <span class="text-xs text-cyber-cyan">READY FOR INPUT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 03</span>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                        TECHNICAL <span class="text-cyber-magenta glow-magenta">CAPABILITIES</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Technical Skills -->
+                    <div class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-6 shadow-neon-cyan hover:border-cyber-cyan transition-all duration-300">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="p-3 bg-cyber-cyan/10 border border-cyber-cyan text-cyber-cyan">
+                                <i class="fa-solid fa-code text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-cyber text-white">TECHNICAL SKILLS</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 font-cyber text-sm">
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-cyan/50 text-cyber-cyan">// HTML / CSS</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-cyan/50 text-cyber-cyan">// JavaScript</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-cyan/50 text-cyber-cyan">// MySQL</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-cyan/50 text-cyber-cyan">// Networking</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Skills -->
+                    <div class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-6 shadow-neon-magenta hover:border-cyber-magenta transition-all duration-300">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="p-3 bg-cyber-magenta/10 border border-cyber-magenta text-cyber-magenta">
+                                <i class="fa-solid fa-users text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-cyber text-white">PROFESSIONAL SKILLS</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 font-cyber text-sm">
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-magenta/50 text-cyber-magenta">// Communication</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-magenta/50 text-cyber-magenta">// Leadership</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-magenta/50 text-cyber-magenta">// Teamwork</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-magenta/50 text-cyber-magenta">// Problem Solving</span>
+                            <span class="px-3 py-2 bg-cyber-dark border border-cyber-magenta/50 text-cyber-magenta">// Critical Thinking</span>
+                        </div>
+                    </div>
+
+                    <!-- Area of Interest -->
+                    <div class="bg-cyber-panel border border-yellow-500/40 cyber-border p-6 shadow-neon-yellow hover:border-yellow-400 transition-all duration-300">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="p-3 bg-yellow-500/10 border border-yellow-400 text-yellow-400">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold font-cyber text-white">AREA OF INTEREST</h3>
+                        </div>
+                        <p class="text-yellow-400 text-2xl font-black font-cyber mb-4">NETWORK &amp; SECURITY</p>
+                        <p class="text-cyber-gray text-sm leading-relaxed">
+                            Focused on building reliable, secure and useful systems &mdash; from LAN design and network defense to secure web applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects / Works Section -->
+        <section id="projects" class="py-24 bg-cyber-dark/40 border-t border-cyber-cyan/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between">
+                    <div>
+                        <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 04</span>
+                        <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                            FEATURED <span class="text-cyber-cyan glow-cyan">WORKS</span>
+                        </h2>
+                    </div>
+                    <p class="text-cyber-gray font-cyber text-sm mt-2 md:mt-0">// HOLOGRAPHIC ARCHIVES &amp; PROTOCOLS</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project Card 1 : Time to Sign & Pay (LIVE) -->
+                    <div class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-6 flex flex-col justify-between group hover:border-cyber-magenta hover:shadow-neon-magenta transition-all duration-300">
+                        <div>
+                            <div class="h-48 bg-cyber-dark border border-cyber-magenta/30 mb-6 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-magenta/20 to-transparent"></div>
+                                <i class="fa-solid fa-file-signature text-5xl text-cyber-magenta group-hover:scale-110 transition-transform duration-300"></i>
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-magenta text-cyber-magenta">LIVE_APP</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyber-magenta transition-colors">TIME TO SIGN &amp; PAY</h3>
+                            <p class="text-cyber-gray text-sm mb-4 leading-relaxed">
+                                Two-role payment and e-contract platform: admin issues a payment link by email, the recipient signs in with Google, pays via QR Ph through PayMongo, and e-signs the contract &mdash; with downloadable contract and invoice PDFs and dashboard tracking.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6 font-cyber text-xs">
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-magenta border border-cyber-magenta/30">Next.js</span>
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-magenta border border-cyber-magenta/30">Prisma</span>
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-magenta border border-cyber-magenta/30">PayMongo</span>
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-magenta border border-cyber-magenta/30">Auth.js</span>
+                            </div>
+                            <div class="flex items-center justify-between font-cyber text-sm">
+                                <a href="https://timetosignandpay.vercel.app" target="_blank" rel="noopener" class="text-cyber-magenta hover:underline flex items-center space-x-1">
+                                    <span>LAUNCH APP</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                                <span class="text-cyber-gray text-xs">STATUS: DEPLOYED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 : Capstone -->
+                    <div class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-6 flex flex-col justify-between group hover:border-cyber-cyan hover:shadow-neon-cyan transition-all duration-300">
+                        <div>
+                            <div class="h-48 bg-cyber-dark border border-cyber-cyan/30 mb-6 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-cyan/20 to-transparent"></div>
+                                <i class="fa-solid fa-network-wired text-5xl text-cyber-cyan group-hover:scale-110 transition-transform duration-300"></i>
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-cyan text-cyber-cyan">CAPSTONE</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyber-cyan transition-colors">SECURE LAN-BASED CAMPUS CASHIER SYSTEM</h3>
+                            <p class="text-cyber-gray text-sm mb-4 leading-relaxed">
+                                A proposed LAN-based cashier collection and audit-ready reporting system for Isabela State University Cauayan Campus, focused on rentals and merchandise collections.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-6 font-cyber text-xs">
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-cyan border border-cyber-cyan/30">Role-based access</span>
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-cyan border border-cyber-cyan/30">Audit trails</span>
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-cyan border border-cyber-cyan/30">Reporting</span>
+                                <span class="px-2 py-1 bg-cyber-dark text-cyber-cyan border border-cyber-cyan/30">Local network</span>
+                            </div>
+                            <div class="flex items-center justify-between font-cyber text-sm">
+                                <a href="#contact" class="text-cyber-cyan hover:underline flex items-center space-x-1">
+                                    <span>REQUEST DETAILS</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                                <span class="text-cyber-gray text-xs">STATUS: PROPOSED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-5 border border-dashed border-cyber-cyan/40 bg-cyber-black/60 font-cyber text-sm text-cyber-gray cyber-border">
+                    <strong class="text-cyber-cyan">NOTE:</strong> professional experience &mdash; none yet. Workshop participation, seminars, awards and recognition: no additional information has been provided yet.
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <span class="font-cyber text-cyber-magenta text-sm tracking-widest">// SECTION 05</span>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                        CERTIFICATES <span class="text-cyber-yellow glow-yellow">&amp; CREDENTIALS</span>
+                    </h2>
+                    <p class="text-cyber-gray font-cyber text-sm mt-3">// CLICK A RECORD TO PREVIEW THE ARCHIVE</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cert 1 -->
+                    <div class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-6 group hover:border-cyber-cyan hover:shadow-neon-cyan transition-all duration-300">
+                        <button class="cert-open w-full text-left" data-img="assets/certificates/certificate-1.jpg" data-title="Introduction to Cyber Security: Stay Safe Online">
+                            <div class="h-40 bg-cyber-dark border border-cyber-cyan/30 mb-5 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-cyan/20 to-transparent"></div>
+                                <img src="assets/certificates/certificate-1.jpg" alt="Introduction to Cyber Security certificate" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-cyan text-cyber-cyan">ZOOM</span>
+                            </div>
+                            <span class="tag font-cyber text-cyber-cyan text-xs tracking-widest block mb-1">TRAINING</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-cyan transition-colors">Introduction to Cyber Security: Stay Safe Online</h3>
+                        </button>
+                        <p class="text-cyber-gray text-sm font-cyber mt-2">OpenLearn &middot; The Open University</p>
+                        <small class="text-cyber-gray font-cyber text-xs block mt-1">May 20, 2025</small>
+                        <a href="assets/certificates/certificate-1.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-cyber-cyan underline">OPEN IMAGE &nearr;</a>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-6 group hover:border-cyber-magenta hover:shadow-neon-magenta transition-all duration-300">
+                        <button class="cert-open w-full text-left" data-img="assets/certificates/certificate-2.jpg" data-title="Gamified Intelligent Cyber Aptitude and Skills Training (GICAST)">
+                            <div class="h-40 bg-cyber-dark border border-cyber-magenta/30 mb-5 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-magenta/20 to-transparent"></div>
+                                <img src="assets/certificates/certificate-2.jpg" alt="GICAST certificate" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-magenta text-cyber-magenta">ZOOM</span>
+                            </div>
+                            <span class="tag font-cyber text-cyber-magenta text-xs tracking-widest block mb-1">TRAINING</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-magenta transition-colors">Gamified Intelligent Cyber Aptitude and Skills Training (GICAST)</h3>
+                        </button>
+                        <p class="text-cyber-gray text-sm font-cyber mt-2">OpenLearn &middot; The Open University</p>
+                        <small class="text-cyber-gray font-cyber text-xs block mt-1">May 19, 2025</small>
+                        <a href="assets/certificates/certificate-2.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-cyber-magenta underline">OPEN IMAGE &nearr;</a>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="bg-cyber-panel border border-yellow-500/40 cyber-border p-6 group hover:border-yellow-400 hover:shadow-neon-yellow transition-all duration-300">
+                        <button class="cert-open w-full text-left" data-img="assets/certificates/certificate-3.jpg" data-title="Cyber Threat Management">
+                            <div class="h-40 bg-cyber-dark border border-yellow-500/30 mb-5 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent"></div>
+                                <img src="assets/certificates/certificate-3.jpg" alt="Cyber Threat Management certificate" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-yellow-400 text-yellow-400">ZOOM</span>
+                            </div>
+                            <span class="tag font-cyber text-yellow-400 text-xs tracking-widest block mb-1">TRAINING</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">Cyber Threat Management</h3>
+                        </button>
+                        <p class="text-cyber-gray text-sm font-cyber mt-2">Cisco Networking Academy</p>
+                        <small class="text-cyber-gray font-cyber text-xs block mt-1">January 28, 2026</small>
+                        <a href="assets/certificates/certificate-3.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-yellow-400 underline">OPEN IMAGE &nearr;</a>
+                    </div>
+
+                    <!-- Cert 4 -->
+                    <div class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-6 group hover:border-cyber-cyan hover:shadow-neon-cyan transition-all duration-300">
+                        <button class="cert-open w-full text-left" data-img="assets/certificates/certificate-4.jpg" data-title="Introduction to Cybersecurity">
+                            <div class="h-40 bg-cyber-dark border border-cyber-cyan/30 mb-5 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-cyan/20 to-transparent"></div>
+                                <img src="assets/certificates/certificate-4.jpg" alt="Introduction to Cybersecurity certificate" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-cyan text-cyber-cyan">ZOOM</span>
+                            </div>
+                            <span class="tag font-cyber text-cyber-cyan text-xs tracking-widest block mb-1">TRAINING</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-cyan transition-colors">Introduction to Cybersecurity</h3>
+                        </button>
+                        <p class="text-cyber-gray text-sm font-cyber mt-2">Cisco Networking Academy</p>
+                        <small class="text-cyber-gray font-cyber text-xs block mt-1">January 17, 2026</small>
+                        <a href="assets/certificates/certificate-4.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-cyber-cyan underline">OPEN IMAGE &nearr;</a>
+                    </div>
+
+                    <!-- Cert 5 -->
+                    <div class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-6 group hover:border-cyber-magenta hover:shadow-neon-magenta transition-all duration-300">
+                        <button class="cert-open w-full text-left" data-img="assets/certificates/certificate-5.jpg" data-title="Information Technology Specialist: Networking">
+                            <div class="h-40 bg-cyber-dark border border-cyber-magenta/30 mb-5 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-cyber-magenta/20 to-transparent"></div>
+                                <img src="assets/certificates/certificate-5.jpg" alt="Information Technology Specialist Networking certificate" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity">
+                                <span class="absolute top-2 right-2 text-xs font-cyber bg-cyber-black px-2 py-1 border border-cyber-magenta text-cyber-magenta">ZOOM</span>
+                            </div>
+                            <span class="tag font-cyber text-cyber-magenta text-xs tracking-widest block mb-1">CERTIFICATION</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyber-magenta transition-colors">Information Technology Specialist: Networking</h3>
+                        </button>
+                        <p class="text-cyber-gray text-sm font-cyber mt-2">Information Technology Specialist</p>
+                        <small class="text-cyber-gray font-cyber text-xs block mt-1">December 8, 2025</small>
+                        <a href="assets/certificates/certificate-5.jpg" target="_blank" rel="noopener" class="inline-block mt-3 font-cyber text-xs text-cyber-magenta underline">OPEN IMAGE &nearr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Timeline -->
+        <section id="education" class="py-24 bg-cyber-dark/50 border-t border-b border-cyber-cyan/20 relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 06</span>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                        EDUCATION <span class="text-cyber-cyan glow-cyan">TIMELINE</span>
+                    </h2>
+                </div>
+
+                <div class="relative border-l-2 border-cyber-cyan/40 ml-4 md:ml-32 space-y-12">
+                    <div class="relative pl-8 md:pl-12 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyber-cyan border-2 border-cyber-black shadow-[0_0_10px_#00f0ff] group-hover:scale-125 transition-transform"></div>
+                        <div class="absolute -left-32 top-1 hidden md:block font-cyber text-cyber-cyan text-sm">2023 &mdash; PRESENT</div>
+                        <div class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-6 shadow-neon-cyan">
+                            <span class="md:hidden font-cyber text-cyber-cyan text-xs block mb-1">2023 &mdash; PRESENT</span>
+                            <h3 class="text-xl font-bold text-white">Bachelor of Science in Information Technology</h3>
+                            <h4 class="font-cyber text-cyber-magenta text-sm mb-3">Isabela State University &ndash; Cauayan Campus</h4>
+                            <p class="text-cyber-gray text-sm leading-relaxed">
+                                Coursework spanning web technologies, databases, networking and information security. Area of interest: Network &amp; Security.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 md:pl-12 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyber-magenta border-2 border-cyber-black shadow-[0_0_10px_#ff007f] group-hover:scale-125 transition-transform"></div>
+                        <div class="absolute -left-32 top-1 hidden md:block font-cyber text-cyber-magenta text-sm">2017 &mdash; 2023</div>
+                        <div class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-6 shadow-neon-magenta">
+                            <span class="md:hidden font-cyber text-cyber-magenta text-xs block mb-1">2017 &mdash; 2023</span>
+                            <h3 class="text-xl font-bold text-white">Secondary Education</h3>
+                            <h4 class="font-cyber text-cyber-cyan text-sm mb-3">Naguilian National High School</h4>
+                            <p class="text-cyber-gray text-sm leading-relaxed">
+                                Senior high school graduate, 2023.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Contact / Terminal Form Section -->
+        <section id="contact" class="py-24 bg-cyber-dark/60 border-t border-cyber-cyan/20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center">
+                    <span class="font-cyber text-cyber-cyan text-sm tracking-widest">// SECTION 07</span>
+                    <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-wider text-white mt-1">
+                        INITIATE <span class="text-cyber-cyan glow-cyan">TRANSMISSION</span>
+                    </h2>
+                    <p class="text-cyber-gray font-cyber text-sm mt-2">Send a direct encrypted signal to Vrenelli Agustin's terminal.</p>
+                </div>
+
+                <!-- Direct channels -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 font-cyber text-sm">
+                    <a href="mailto:vrenelli.agustin.3004@gmail.com" class="bg-cyber-panel border border-cyber-cyan/40 cyber-border p-4 hover:border-cyber-cyan hover:shadow-neon-cyan transition-all">
+                        <small class="text-cyber-gray text-xs block tracking-widest">PROFESSIONAL EMAIL</small>
+                        <span class="text-cyber-cyan text-xs break-all leading-relaxed">vrenelli.agustin.3004@gmail.com</span>
+                    </a>
+                    <a href="tel:09918922775" class="bg-cyber-panel border border-cyber-magenta/40 cyber-border p-4 hover:border-cyber-magenta hover:shadow-neon-magenta transition-all">
+                        <small class="text-cyber-gray text-xs block tracking-widest">PHONE</small>
+                        <span class="text-cyber-magenta">09918922775</span>
+                    </a>
+                    <a href="https://www.facebook.com/share/1DZdVxciyU/" target="_blank" rel="noopener" class="bg-cyber-panel border border-yellow-500/40 cyber-border p-4 hover:border-yellow-400 hover:shadow-neon-yellow transition-all">
+                        <small class="text-cyber-gray text-xs block tracking-widest">FACEBOOK</small>
+                        <span class="text-yellow-400">Vrenelli M. Agustin</span>
+                    </a>
+                </div>
+
+                <div class="bg-cyber-black border-2 border-cyber-cyan/50 cyber-border p-8 shadow-neon-cyan">
+                    <div class="flex items-center justify-between border-b border-cyber-cyan/30 pb-4 mb-6 font-cyber text-xs text-cyber-cyan">
+                        <span class="flex items-center space-x-2">
+                            <i class="fa-solid fa-terminal"></i>
+                            <span>SECURE_COMM_CHANNEL // vrenelli.agustin</span>
+                        </span>
+                        <span class="animate-pulse text-cyber-magenta">ENCRYPTION: AES-256</span>
+                    </div>
+
+                    <form id="cyber-contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="sender-name" class="block font-cyber text-xs text-cyber-cyan mb-2">// AGENT_NAME</label>
+                                <input type="text" id="sender-name" required placeholder="Enter your handle or name..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-white font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all">
+                            </div>
+                            <div>
+                                <label for="sender-email" class="block font-cyber text-xs text-cyber-cyan mb-2">// RETURN_FREQUENCY (EMAIL)</label>
+                                <input type="email" id="sender-email" required placeholder="Enter your email address..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-white font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="sender-message" class="block font-cyber text-xs text-cyber-cyan mb-2">// TRANSMISSION_PAYLOAD (MESSAGE)</label>
+                            <textarea id="sender-message" required rows="5" placeholder="Type your message or project brief here..." class="w-full bg-cyber-dark border border-cyber-cyan/40 px-4 py-3 text-white font-cyber focus:outline-none focus:border-cyber-cyan focus:shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all"></textarea>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div id="form-status" class="font-cyber text-xs text-cyber-magenta h-6"></div>
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-cyber-cyan text-cyber-black font-bold font-cyber cyber-border hover:bg-cyber-magenta hover:text-white transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>TRANSMIT SIGNAL</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <p class="font-cyber text-xs text-cyber-gray mt-5 border-t border-cyber-cyan/20 pt-4">
+                        <i class="fa-solid fa-circle-info mr-1 text-cyber-cyan"></i>
+                        This static portfolio has no mail backend connected &mdash; use the email link above for a guaranteed reply.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-black border-t border-cyber-cyan/30 py-12 relative z-10 font-cyber">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-cyber-dark border border-cyber-cyan flex items-center justify-center text-cyber-cyan font-bold cyber-border">
+                    VA
+                </div>
+                <div>
+                    <span class="text-white text-sm font-bold tracking-wider">VRENELLI M. AGUSTIN</span>
+                    <span class="text-xs text-cyber-gray block">&copy; 2026 ALL RIGHTS RESERVED.</span>
+                </div>
+            </div>
+
+            <div class="flex space-x-6 text-xl text-cyber-cyan">
+                <a href="https://timetosignandpay.vercel.app" target="_blank" rel="noopener" title="Time to Sign &amp; Pay" class="hover:text-cyber-magenta transition-colors"><i class="fa-solid fa-file-signature"></i></a>
+                <a href="https://www.facebook.com/share/1DZdVxciyU/" target="_blank" rel="noopener" title="Facebook" class="hover:text-cyber-magenta transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="mailto:vrenelli.agustin.3004@gmail.com" title="Email" class="hover:text-cyber-magenta transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:09918922775" title="Phone" class="hover:text-cyber-magenta transition-colors"><i class="fa-solid fa-phone"></i></a>
+                <a href="assets/resume.pdf" download title="Download resume" class="hover:text-cyber-magenta transition-colors"><i class="fa-solid fa-file-arrow-down"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Certificate Preview Modal -->
+    <div id="cert-modal" class="fixed inset-0 z-[60] items-center justify-center p-4">
+        <div id="cert-backdrop" class="absolute inset-0 bg-cyber-black/90 backdrop-blur-sm"></div>
+        <div class="relative bg-cyber-panel border-2 border-cyber-cyan/60 cyber-border p-6 shadow-neon-cyan w-full max-w-3xl max-h-[90vh] overflow-auto">
+            <div class="flex items-center justify-between border-b border-cyber-cyan/30 pb-3 mb-4 font-cyber text-xs text-cyber-cyan">
+                <span><i class="fa-solid fa-folder-open mr-2"></i>CREDENTIAL_ARCHIVE</span>
+                <button id="cert-close" class="text-cyber-magenta text-lg focus:outline-none" aria-label="Close preview"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <h3 id="cert-title" class="text-white font-bold text-lg mb-4"></h3>
+            <img id="cert-img" src="" alt="" class="w-full h-auto border border-cyber-cyan/40 bg-cyber-dark">
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Typing Effect in Hero Section
+        const words = [
+            "BSIT Student",
+            "Network & Security Enthusiast",
+            "Web & Database Developer",
+            "Future IT Professional"
+        ];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typing-text').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typing-text').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    setTimeout(typingEffect, 500);
+                    return;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+
+        typingEffect();
+
+        // Certificate preview modal
+        const certModal = document.getElementById('cert-modal');
+        const certImg = document.getElementById('cert-img');
+        const certTitle = document.getElementById('cert-title');
+
+        function openCert(src, title) {
+            certImg.src = src;
+            certImg.alt = title;
+            certTitle.textContent = title;
+            certModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCert() {
+            certModal.classList.remove('open');
+            document.body.style.overflow = '';
+            certImg.src = '';
+        }
+
+        document.querySelectorAll('.cert-open').forEach(btn => {
+            btn.addEventListener('click', () => openCert(btn.dataset.img, btn.dataset.title));
+        });
+        document.getElementById('cert-close').addEventListener('click', closeCert);
+        document.getElementById('cert-backdrop').addEventListener('click', closeCert);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCert(); });
+
+        // Contact Form Interactive Transmission Simulation
+        const contactForm = document.getElementById('cyber-contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value;
+            const email = document.getElementById('sender-email').value;
+
+            formStatus.textContent = "[TRANSMITTING... ENCRYPTING PACKETS...]";
+            formStatus.className = "font-cyber text-xs text-cyber-yellow h-6";
+
+            setTimeout(() => {
+                formStatus.textContent = `[SUCCESS] Transmission received from ${name}. Secure reply dispatched to ${email}.`;
+                formStatus.className = "font-cyber text-xs text-cyber-cyan h-6";
+                contactForm.reset();
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
