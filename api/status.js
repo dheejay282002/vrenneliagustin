@@ -83,7 +83,7 @@ export default async function handler(req, res) {
     : 'ref=' + encodeURIComponent(ref);
 
   const envUnlock = process.env.PORTFOLIO_UNLOCKED === 'true';
-  const constUnlock = false; // <-- change to true to force-unlock, then push
+  const constUnlock = true;
   if (envUnlock || constUnlock) {
     return res.status(200).json({
       unlocked: true, status: 'PAID', paid: true, expired: false,
